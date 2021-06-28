@@ -4,7 +4,19 @@
     <fileChecksum>1472037203</fileChecksum>
     <configuration>
         <name>Debug</name>
-        <outputs />
+        <outputs>
+            <file>$PROJ_DIR$\src\main.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+        </outputs>
+        <file>
+            <name>$PROJ_DIR$\src\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 1</file>
+                </tool>
+            </outputs>
+        </file>
     </configuration>
     <configuration>
         <name>Release</name>
