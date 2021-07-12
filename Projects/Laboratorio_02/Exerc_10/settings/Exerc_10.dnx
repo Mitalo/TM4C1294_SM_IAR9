@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <settings>
     <DebugChecksum>
-        <Checksum>1045239010</Checksum>
+        <Checksum>302790054</Checksum>
     </DebugChecksum>
     <Disassembly>
-        <MixedMode>0</MixedMode>
+        <MixedMode>1</MixedMode>
         <InstrCount>0</InstrCount>
     </Disassembly>
     <Stack>
@@ -30,14 +30,9 @@
         <ShowArgs>0</ShowArgs>
     </CallStack>
     <Registers>
-        <regBase0>R0 2</regBase0>
-        <regBase1>R1 2</regBase1>
-        <regBase2>R2 2</regBase2>
-        <regBase3>R3 2</regBase3>
-        <regBase4>R4 2</regBase4>
-        <regBase5>R5 2</regBase5>
-        <regBase6>R6 2</regBase6>
-        <regBase7>PC 2</regBase7>
+        <regBase0>R0 10</regBase0>
+        <regBase1>R1 10</regBase1>
+        <regBase2>R2 10</regBase2>
     </Registers>
     <DriverProfiling>
         <Enabled>0</Enabled>
