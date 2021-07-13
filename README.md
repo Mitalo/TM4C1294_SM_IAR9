@@ -1,25 +1,42 @@
 # TM4C1294_SM_IAR9
 Exemplos Assembly ARM Cortex-M (IDE IAR EWARM V9.10)
-Nesse projeto, podemos observar o funcionamento de operações com os registradores, como deslocamentos e rotações.
-Os comentários de cada função estão no próprio código
+No exercício 10, é idealizado um multiplicador que realiza a multiplicação entre 2 registradores
+main    
+        MOV R0, #10             ;;Neste passo, é adicionado o valor decimal 10 no registrador R0
+        MOV R1, #5              ;;Neste passo, é adicionado o valor decimal 5 no registrador R1
+        MOV R2, #0              ;;Neste passo, é adicionado o valor 0 no registrador R2
+        
+Mul16b
+        LSRS R1, R1, #1         ;;Aqui, é realizado um deslocamento a direita do registrador R1, colocando o valor do bit menos
+                                ;;significativo no flag de Carry
 
-Mudando o comando MOV para MVN, os valores sofrem o deslocamento e são invertidos, ou seja, o que era '1' fica '0' e o que era '0' fica '1'.
+                                ;;Quando o flag Carry está em 0, quer dizer que o bit menos significativo do R1, que vai realizar 
+                                ;;a multiplicação bit a bit com o registrador R2, é 0, então o registrador R2 irá ser somado com 0s
+                                ;;Quando o flag Carry está em 1, quer dizer que o bit menos significativo do R1, que vai realizar a 
+                                ;;multiplicação bit a bit com o registrador R2, é 1, então o registrador R2 irá ser somado ao R1
+                                ;;deslocado para a esquerda
 
-        MOV R0, #0x55           ;Neste passo, ele coloca o valor 55 (em hexadecimal) no Registrador R0
+                                ;;Ex.: 1010 - Valor do R0 (10)
+                                ;;    x0101 - Valor do R1 (5)
+                                ;;    -----
+                                ;;     1010 - Neste caso, ele está na sub_rotina "mult"
+                                ;;    00000 - Neste caso, ele está na sub_rotina "desloc"
+                                ;;   101000 - Neste caso, ele está na sub_rotina "mult", observe que este valor é o 
+                                ;;   ------
+                                ;;   110010
 
-        MVN R1, R0, LSL #16     ;Neste passo, ele realiza o deslocamento para a esquerda
-                                ;em 16 bits no Registrador R0 e coloca esse valor de deslocamento no registrador R1, sem alterar o R0
+        BCS mult                ;;Se o flag de Carry estiver em 1, é realizado um desvio para a sub_rotina "mult"
+        BCC desloc              ;;Se o flag de Carry estiver em 0, é realizado um desvio para a sub_rotina "desloc"
+        
+mult    ADD R2, R0              ;;Neste passo, o valor do registrador R2 é somado com o valor do R0
+        LSL R0, R0, #1          ;;Neste passo, é realizado um deslocamento para a esquerda do registrador R0, em 1 unidade
+        B sair                  ;;Neste passo, é realizado um desvio para a sub_rotina "sair"
 
-        MVN R2, R1, LSR #8      ;Neste passo, ele realiza o deslocamento para a direita em 8 bits do valor
-                                ;contido no Registrador R1 e adiciona esse valor no Registrador R2, sem alterar R2
+desloc  ADD R2, #0              ;;Neste passo, o valor do registrador R2 é somado com 0
+        LSL R0, R0, #1          ;;Neste passo, é realizado um deslocamento para a esquerda do registrador R0, em 1 unidade
+        B sair                  ;;Neste passo, é realizado um desvio para a sub_rotina "sair"
 
-        MOV R3, R2, ASR #4      ;Neste passo, ele realiza um deslocamento aritmético para a direita no valor que estava
-                                ;contido no Registrador R2 e adiciona esse valor no Registrador R3, sem alterar R3
+sair
+        BNE Mul16b              ;;Meste passo, é realizado um desvio para o começo da sub_rotina Mul16b
 
-        MOV R4, R3, ROR #2      ;Neste passo, ele realiza uma rotação de 2 bits para a direita no valor que estava contido no 
-                                ;Registrador R3 e adiciona esse resultado no Registrador R4, sem alterar R3. Na rotação, ele não 
-                                ;irá "perder" o valor que estava nos 2 bits menos significativos (LSB), mas coloca esses valores 
-                                ;nos 2 mais significativos (MSB)
-
-        MOV R5, R4, RRX         ;Neste passo, ele realiza o deslocamento de 1 bit para a direita do valor contido em R4 e adiciona
-                                ;esse valor em R5, sem alterar R4
+fim     B fim
