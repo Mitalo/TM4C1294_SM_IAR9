@@ -16,25 +16,30 @@ main
         MOV R1, R0              ;;Neste passo, o registrador R1 recebe o valor do registrador R0, para ser decrementado posteriormente
         CMP R0, #0              ;;Neste passo, é verificado se o valor do registrador R0 é zero, afetando o flag Z
         BEQ fatorial_de_zero    ;;Neste passo, se o flag Z estiver em 1, é realizado um desvio para a sub_rotina "fatorial_de_zero"
-        B fatorial              ;;Neste passo, é realizado um desvio para a sub_rotina "fatorial"
+        BL fatorial              ;;Neste passo, é chamada a sub_rotina "fatorial"
+        B .
         
 fatorial_de_zero
         MOV R0, #1              ;;Aqui, caso o valor de entrada seja 0, a saída obtida será 0
-        B fim
+        BX LR                   ;;Retorna para a chamada da sub_rotina
         
 fatorial
         SUB R1, #1              ;;Aqui, o valor do registrador R1 é decrementado em 1 unidade, para realizarmos o cálculo do fatorial
-        CBZ R1, fim             ;;Neste passo, é verificado se o registrador R1 chegou em 0, se sim, é realizado um desvio para o fim
+        CBZ R1, retorno         ;;Neste passo, é verificado se o registrador R1 chegou em 0, se sim, é realizado um desvio para o retorno
         SMULL R0, R2, R0, R1    ;;Neste passo, é realizada uma multiplicação sinalizada entre os registradores R0 e R1, 
                                 ;;adicionando o resultado nos registradores R0 e R2, sendo que no R0 ficam os bits menos 
                                 ;;significativos e no R2 os mais significativos
         CMP R2, #0              ;;Aqui, é realizada a verificação se R2 é 0, se sim, o Flag Z é setado
         BNE extrapolou          ;;Se o flag Z está em 0, significa que foram extrapolados os 32 bits
         B fatorial              ;;Aqui é realizado um desvio para o começo da sub_rotina
-        
+
+retorno BX LR                   ;;Retorna para a chamada da sub_rotina
+
 extrapolou
         MOV R0, #-1             ;;Se os 32 bits extrapolaram, é adicionado o valor -1 em R0
         POP {R1, R2}            ;;Neste passo, são "devolvidos" os valores iniciais dos registradores R1 e R2
+     
+        BX LR                   ;;Retorna à chamada da função
      
 fim     B fim
 

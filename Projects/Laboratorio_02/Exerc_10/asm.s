@@ -15,6 +15,9 @@ main
         MOV R1, #5              ;;Neste passo, é adicionado o valor decimal 5 no registrador R1
         MOV R2, #0              ;;Neste passo, é adicionado o valor 0 no registrador R2
         
+        BL Mul16b               ;;Chama a sub_rotina
+        B .
+        
 Mul16b
         LSRS R1, R1, #1         ;;Aqui, é realizado um deslocamento a direita do registrador R1, colocando o valor do bit menos
                                 ;;significativo no flag de Carry
@@ -47,7 +50,9 @@ desloc  ADD R2, #0              ;;Neste passo, o valor do registrador R2 é somad
 
 sair
         BNE Mul16b              ;;Meste passo, é realizado um desvio para o começo da sub_rotina Mul16b
-
+        
+        BX LR                   ;;Retorna a chamada da sub_rotina
+        
 fim     B fim
         ;; Forward declaration of sections.
         SECTION CSTACK:DATA:NOROOT(3)
