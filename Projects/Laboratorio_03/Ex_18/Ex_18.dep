@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     <fileVersion>5</fileVersion>
-    <fileChecksum>3077557219</fileChecksum>
+    <fileChecksum>3319926650</fileChecksum>
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\src\gpio2.s</file>
+            <file>$PROJ_DIR$\asm.s</file>
+            <file>$PROJ_DIR$\..\..\gpio2\src\gpio2.s</file>
+            <file>$PROJ_DIR$\..\..\gpio\src\gpio.s</file>
         </outputs>
         <forcedrebuild>
             <name>[MULTI_TOOL]</name>
