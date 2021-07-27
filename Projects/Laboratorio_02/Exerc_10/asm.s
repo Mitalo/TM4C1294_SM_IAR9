@@ -42,18 +42,17 @@ Mul16b
         
 mult    ADD R2, R0              ;;Neste passo, o valor do registrador R2 é somado com o valor do R0
         LSL R0, R0, #1          ;;Neste passo, é realizado um deslocamento para a esquerda do registrador R0, em 1 unidade
-        B sair                  ;;Neste passo, é realizado um desvio para a sub_rotina "sair"
+        BNE Mul16b                  ;;Neste passo, é realizado um desvio para a sub_rotina "sair"
 
-desloc  ADD R2, #0              ;;Neste passo, o valor do registrador R2 é somado com 0
+desloc
         LSL R0, R0, #1          ;;Neste passo, é realizado um deslocamento para a esquerda do registrador R0, em 1 unidade
-        B sair                  ;;Neste passo, é realizado um desvio para a sub_rotina "sair"
+        BNE Mul16b              ;;Neste passo, é realizado um desvio para a sub_rotina "sair"
 
-sair
-        BNE Mul16b              ;;Meste passo, é realizado um desvio para o começo da sub_rotina Mul16b
         
         BX LR                   ;;Retorna a chamada da sub_rotina
-        
+
 fim     B fim
+
         ;; Forward declaration of sections.
         SECTION CSTACK:DATA:NOROOT(3)
         SECTION .intvec:CODE:NOROOT(2)

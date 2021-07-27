@@ -1,0 +1,1 @@
+﻿"C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_03\Ex_17\asm.s" "-OC:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_03\Ex_17\Debug\Obj\\" -s+ -M<> -w+ -r --cpu Cortex-M4 --fpu VFPv4_sp

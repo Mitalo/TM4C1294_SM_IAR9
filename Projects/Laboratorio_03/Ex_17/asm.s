@@ -58,7 +58,7 @@ theend  ADD R10, #1
 
         AND R7, R10, #1 ;Aqui, é adicionado no R7 a operação AND de R10 com 1, ou seja, R7 vai ficar só com o valor
                         ;do bit menos significativo do R10
-        MOV R1, R7, LSL, #1      ;Aqui, o R1 recebe o valor de R7 deslocado em 1 para a esquerda. Fiz isso para
+        MOV R1, R7, LSL #1      ;Aqui, o R1 recebe o valor de R7 deslocado em 1 para a esquerda. Fiz isso para
                                  ;poder mudar o led D1 da placa;
         
         MOV R7, #0

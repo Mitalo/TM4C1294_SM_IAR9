@@ -5,30 +5,25 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\..\..\gpio\src\gpio.s</file>
-            <file>$PROJ_DIR$\..\..\Laboratorio_02\Exerc_10\asm.s</file>
-            <file>$PROJ_DIR$\..\Ex_16\asm.s</file>
-            <file>$PROJ_DIR$\..\..\Laboratorio_02\Exerc_11\asm.s</file>
-            <file>$PROJ_DIR$\asm.s</file>
-            <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C1294NC.icf</file>
-            <file>$PROJ_DIR$\Debug\List\Ex_17.map</file>
-            <file>$PROJ_DIR$\Debug\Obj\asm.o.rsp</file>
-            <file>$PROJ_DIR$\..\..\gpio2\src\gpio2.s</file>
             <file>$PROJ_DIR$\Debug\Exe\Ex_17.out</file>
+            <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C1294NC.icf</file>
+            <file>$PROJ_DIR$\Debug\Obj\asm.o.rsp</file>
             <file>$PROJ_DIR$\Debug\Obj\asm.o</file>
+            <file>$PROJ_DIR$\asm.s</file>
+            <file>$PROJ_DIR$\Debug\List\Ex_17.map</file>
         </outputs>
         <file>
-            <name>$PROJ_DIR$\asm.s</name>
+            <name>$PROJ_DIR$\Debug\Exe\Ex_17.out</name>
             <outputs>
                 <tool>
-                    <name>AARM</name>
-                    <file> 10</file>
+                    <name>ILINK</name>
+                    <file> 5</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
-                    <name>AARM</name>
-                    <file> 7</file>
+                    <name>ILINK</name>
+                    <file> 1 3</file>
                 </tool>
             </inputs>
         </file>
@@ -37,22 +32,22 @@
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 9 6</file>
+                    <file> 5 0</file>
                 </tool>
             </outputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\Debug\Exe\Ex_17.out</name>
+            <name>$PROJ_DIR$\asm.s</name>
             <outputs>
                 <tool>
-                    <name>ILINK</name>
-                    <file> 6</file>
+                    <name>AARM</name>
+                    <file> 3</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
-                    <name>ILINK</name>
-                    <file> 5 10</file>
+                    <name>AARM</name>
+                    <file> 2</file>
                 </tool>
             </inputs>
         </file>
