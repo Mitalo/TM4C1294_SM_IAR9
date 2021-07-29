@@ -54,22 +54,26 @@ main
  	LDR R0, = GPIO_PORTN_DATA_R
         LDR R9, = GPIO_PORTJ_DATA_R
         
+        MOV R2, #00000011b
+        MOV R11, #00010001b
         
 loop	STR R1, [R0, R2, LSL #2] ; aciona LED com estado atual
-        STR R5, [R6, R4, LSL #2]
+        STR R5, [R6, R11, LSL #2]
+        
         MOVT R3, #0x000F ; constante de atraso 
 delay   CBZ R3, theend ; 1 clock
         SUB R3, R3, #1 ; 1 clock
         B delay ; 3 clocks
 
-theend  LDR R8, [R9, R11, LSL #2]
-        CMP R8, #1
-        IT EQ
+theend  
+        BL leitura
+        
+        CMP R8, #1              //R8 está com o valor da leitura
+        IT EQ                   //se for 1 a leitura, o contador é incrementado e os LEDs "sobem"
           BLEQ sobe
         CMP R8, #2
-        IT EQ
+        IT EQ                   //se for 2 a leitura, o caontador é decrementado e os LEDs "descem"
           BLEQ desce
-        
 
         AND R7, R10, #1 ;Aqui, é adicionado no R7 a operação AND de R10 com 1, ou seja, R7 vai ficar só com o valor
                         ;do bit menos significativo do R10
@@ -101,6 +105,10 @@ theend  LDR R8, [R9, R11, LSL #2]
         B loop
 
 sub_config_N
+        MOV R0, #0
+        MOV R1, #0
+        MOV R2, #0
+        
         MOV R2, #PORTN_BIT
 	LDR R0, =SYSCTL_RCGCGPIO_R
 	LDR R1, [R0] ; leitura do estado anterior
@@ -126,66 +134,91 @@ n_wait	LDR R2, [R0] ; leitura do estado atual
         BX LR
 
 sub_config_F
-        MOV R4, #PORTF_BIT
+        MOV R0, #0
+        MOV R1, #0
+        MOV R2, #0
+        
+        MOV R2, #PORTF_BIT
 	LDR R0, =SYSCTL_RCGCGPIO_R
-	LDR R5, [R0] ; leitura do estado anterior
-	ORR R5, R4 ; habilita port N
-	STR R5, [R0] ; escrita do novo estado
+	LDR R1, [R0] ; leitura do estado anterior
+	ORR R1, R2 ; habilita port N
+	STR R1, [R0] ; escrita do novo estado
         LDR R0, =SYSCTL_PRGPIO_R
-f_wait	LDR R4, [R0] ; leitura do estado atual
-	TEQ R5, R4 ; clock do port N habilitado?
+f_wait	LDR R2, [R0] ; leitura do estado atual
+	TEQ R1, R2 ; clock do port N habilitado?
 	BNE f_wait ; caso negativo, aguarda
 
-        MOV R4, #00010001b ; bit 0
+        MOV R2, #00010001b ; bit 0
         
 	LDR R0, =GPIO_PORTF_DIR_R
-	LDR R5, [R0] ; leitura do estado anterior
-	ORR R5, R4 ; bit de saída
-	STR R5, [R0] ; escrita do novo estado
+	LDR R1, [R0] ; leitura do estado anterior
+	ORR R1, R2 ; bit de saída
+	STR R1, [R0] ; escrita do novo estado
 
 	LDR R0, =GPIO_PORTF_DEN_R
-	LDR R5, [R0] ; leitura do estado anterior
-	ORR R5, R4 ; habilita função digital
-	STR R5, [R0] ; escrita do novo estado
+	LDR R1, [R0] ; leitura do estado anterior
+	ORR R1, R2 ; habilita função digital
+	STR R1, [R0] ; escrita do novo estado
 
         BX LR
         
 sub_config_J
+        MOV R0, #0
+        MOV R1, #0
+        MOV R2, #0
         
-        MOV R12, #PORTJ_BIT
+        MOV R2, #PORTJ_BIT
         LDR R0, =SYSCTL_RCGCGPIO_R
-        LDR R11, [R0]
-        ORR R11, R12
-        STR R11, [R0]
+        LDR R1, [R0]
+        ORR R1, R2
+        STR R1, [R0]
         
         LDR R0, =SYSCTL_PRGPIO_R
-j_wait  LDR R12, [R0]
-        TEQ R11, R12
+j_wait  LDR R2, [R0]
+        TEQ R1, R2
         BNE j_wait
         
         LDR R0, =GPIO_PORTJ_DIR_R
-        LDR R11, [R0]
-        BIC R11, #00000011b
-        STR R11, [R0]
+        LDR R1, [R0]
+        BIC R1, #00000011b
+        STR R1, [R0]
         
         LDR R0, =GPIO_PORTJ_PUR_R
-        LDR R11, [R0]
-        ORR R11, #00000011b
-        STR R11, [R0]
+        LDR R1, [R0]
+        ORR R1, #00000011b
+        STR R1, [R0]
         
         LDR R0, =GPIO_PORTJ_DEN_R
-        LDR R11, [R0]
-        ORR R11, #00000011b
-        STR R11, [R0]
-        
-        
+        LDR R1, [R0]
+        ORR R1, #00000011b
+        STR R1, [R0]    
         
         BX LR
 
-sobe    ADD R10, #1
+sobe    ADD R10, #1     //lógica para contagem ascendente
         BX LR
-desce   SUB R10, #1
+desce   SUB R10, #1     //lógica para contagem descendente
         BX LR
+
+leitura:                //lógica para leitura de botão
+        LDR R8, [R9, R2, LSL #2]        //salva o valor da leitura
+
+debounce:
+        MOV R3, #20                     //20 é a quantidade de repetições, ou seja, as instruções abaixo serão realizadas 20 vezes
+
+repeticao:
+        CBZ R3, retorno                 //se atingir o 20, retorna para a chamada da sub rotina
+        LDR R4, [R9, R2, LSL #2]        //faz uma nova leitura do botão
+        CMP R8, R4                      //compara a leitura anterior com a nova
+        MOV R8, R4                      //salva a nova leitura no registrador que tinha a antiga
+        ITE EQ
+          SUBEQ R3, R3, #1              //se os valores das leituras nova e antiga forem iguais, repete e R3 é decrementado
+          BNE debounce                  //se forem diferentes, R3 se mantém em 20
+        B repeticao                     
+retorno:
+        BX LR
+
+
 
         ;; Forward declaration of sections.
         SECTION CSTACK:DATA:NOROOT(3)

@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V9.10.2.313/W64 for ARM                  27/Jul/2021  18:33:07
+# IAR ELF Linker V9.10.2.313/W64 for ARM                  28/Jul/2021  21:17:39
 # Copyright 2007-2021 IAR Systems AB.
 #
 #    Output file  =
@@ -48,10 +48,10 @@ No sections matched the following patterns:
   .intvec   ro code          0x0    0x40  asm.o [1]
                           - 0x40    0x40
 
-"P1":                              0x176
-  .text     ro code         0x40   0x174  asm.o [1]
-  .text     ro code        0x1b4     0x2  asm.o [1]
-                         - 0x1b6   0x176
+"P1":                              0x1aa
+  .text     ro code         0x40   0x1a8  asm.o [1]
+  .text     ro code        0x1e8     0x2  asm.o [1]
+                         - 0x1ea   0x1aa
 
 "P2":                             0x8000
   CSTACK             0x2000'0000  0x8000  <Block>
@@ -62,7 +62,7 @@ Unused ranges:
 
          From           To      Size
          ----           --      ----
-        0x1b6     0xf'ffff  0xf'fe4a
+        0x1ea     0xf'ffff  0xf'fe16
   0x2000'8000  0x2003'ffff  0x3'8000
 
 
@@ -78,13 +78,13 @@ command line/config:
     Total:
 
 C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_03\Ex_18\Debug\Obj: [1]
-    asm.o               438
+    asm.o               490
     --------------------------------
-    Total:              438
+    Total:              490
 
     Linker created            32'768
 ------------------------------------
-    Grand Total:        438   32'768
+    Grand Total:        490   32'768
 
 
 *******************************************************************************
@@ -101,7 +101,7 @@ __vector_table               0x0        Data  Gb  asm.o [1]
 
 [1] = C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_03\Ex_18\Debug\Obj
 
-     438 bytes of readonly  code memory
+     490 bytes of readonly  code memory
   32'768 bytes of readwrite data memory
 
 Errors: none

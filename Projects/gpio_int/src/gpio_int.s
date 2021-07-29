@@ -191,7 +191,7 @@ LED_write:
 ; Destrói: R1, R2, R3 e R4
 Button_read:
         LDR R1, =GPIO_PORTJ_BASE
-        MOV R2, #00000011b ; máscara PJ1|PJ0
+        MOV R2, #00000011b
         LDR R0, [R1, R2, LSL #2]
         
 dbc:    MOV R3, #50 ; constante de debounce
