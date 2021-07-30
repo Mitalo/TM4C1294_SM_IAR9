@@ -5,19 +5,19 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\src\gpio.s</file>
-            <file>$PROJ_DIR$\Debug\List\gpio.map</file>
-            <file>$PROJ_DIR$\Debug\Exe\gpio.out</file>
-            <file>$PROJ_DIR$\Debug\Obj\gpio.o</file>
             <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C1294NC.icf</file>
+            <file>$PROJ_DIR$\Debug\List\gpio.map</file>
+            <file>$PROJ_DIR$\src\gpio.s</file>
+            <file>$PROJ_DIR$\Debug\Obj\gpio.o</file>
             <file>$PROJ_DIR$\Debug\Obj\gpio.o.rsp</file>
+            <file>$PROJ_DIR$\Debug\Exe\gpio.out</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 1 2</file>
+                    <file> 1 5</file>
                 </tool>
             </outputs>
         </file>
@@ -32,7 +32,7 @@
             <inputs>
                 <tool>
                     <name>AARM</name>
-                    <file> 5</file>
+                    <file> 4</file>
                 </tool>
             </inputs>
         </file>
@@ -47,7 +47,7 @@
             <inputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 4 3</file>
+                    <file> 0 3</file>
                 </tool>
             </inputs>
         </file>
