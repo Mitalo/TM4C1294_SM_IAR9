@@ -1,0 +1,5 @@
+# ninja log v5
+0	118	6503365641143428	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Laboratorio_05/Debug/Obj/asm.o	b3b6de3cf4069815
+8	124	6503365641243027	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Laboratorio_05/Debug/Obj/startup_TM4C1294.o	9fc464e453896356
+1	132	6503366880749280	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Laboratorio_05/Debug/Obj/asm.o	b3b6de3cf4069815
+137	315	6503366882524470	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Laboratorio_05/Debug/Exe/Laboratorio_05.out	2b8e1a0d6211631e

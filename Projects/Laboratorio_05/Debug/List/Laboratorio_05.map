@@ -1,26 +1,26 @@
 ###############################################################################
 #
-# IAR ELF Linker V9.10.2.313/W64 for ARM                  10/Aug/2021  19:08:40
+# IAR ELF Linker V9.10.2.313/W64 for ARM                  10/Aug/2021  19:11:28
 # Copyright 2007-2021 IAR Systems AB.
 #
 #    Output file  =
 #        C:\Users\1\Desktop\2021.1\Sistemas
-#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_04\Debug\Exe\Laboratorio_04.out
+#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_05\Debug\Exe\Laboratorio_05.out
 #    Map file     =
 #        C:\Users\1\Desktop\2021.1\Sistemas
-#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_04\Debug\List\Laboratorio_04.map
+#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_05\Debug\List\Laboratorio_05.map
 #    Command line =
 #        -f "C:\Users\1\Desktop\2021.1\Sistemas
-#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_04\Debug\Exe\Laboratorio_04.out.rsp"
+#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_05\Debug\Exe\Laboratorio_05.out.rsp"
 #        ("C:\Users\1\Desktop\2021.1\Sistemas
-#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_04\Debug\Obj\asm.o"
+#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_05\Debug\Obj\asm.o"
 #        "C:\Users\1\Desktop\2021.1\Sistemas
-#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_04\Debug\Obj\startup_TM4C1294.o"
+#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_05\Debug\Obj\startup_TM4C1294.o"
 #        --no_out_extension -o "C:\Users\1\Desktop\2021.1\Sistemas
-#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_04\Debug\Exe\Laboratorio_04.out"
+#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_05\Debug\Exe\Laboratorio_05.out"
 #        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
 #        --map "C:\Users\1\Desktop\2021.1\Sistemas
-#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_04\Debug\List\Laboratorio_04.map"
+#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_05\Debug\List\Laboratorio_05.map"
 #        --config "C:\Program Files\IAR Systems\Embedded Workbench
 #        9.0\arm\CONFIG\generic_cortex.icf" --semihosting --no_library_search
 #        --entry __iar_program_start --vfe --text_out locale)
@@ -50,10 +50,10 @@ No sections matched the following patterns:
   .intvec   ro code          0x0  0x3c0  startup_TM4C1294.o [1]
                          - 0x3c0  0x3c0
 
-"P1":                             0x1e6
-  .text     ro code        0x3c0  0x1e4  asm.o [1]
-  .text     ro code        0x5a4    0x2  startup_TM4C1294.o [1]
-                         - 0x5a6  0x1e6
+"P1":                             0x24e
+  .text     ro code        0x3c0  0x24c  asm.o [1]
+  .text     ro code        0x60c    0x2  startup_TM4C1294.o [1]
+                         - 0x60e  0x24e
 
 "P2":                             0x400
   CSTACK             0x2000'0000  0x400  <Block>
@@ -64,7 +64,7 @@ Unused ranges:
 
          From           To      Size
          ----           --      ----
-        0x5a6     0x7'ffff  0x7'fa5a
+        0x60e     0x7'ffff  0x7'f9f2
   0x2000'0400  0x2000'ffff    0xfc00
 
 
@@ -79,15 +79,15 @@ command line/config:
     ------------------------------------
     Total:
 
-C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_04\Debug\Obj: [1]
-    asm.o                   484
+C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_05\Debug\Obj: [1]
+    asm.o                   588
     startup_TM4C1294.o      962
     ------------------------------------
-    Total:                1'446
+    Total:                1'550
 
     Linker created                 1'024
 ----------------------------------------
-    Grand Total:          1'446    1'024
+    Grand Total:          1'550    1'024
 
 
 *******************************************************************************
@@ -98,18 +98,17 @@ Entry                     Address  Size  Type      Object
 -----                     -------  ----  ----      ------
 CSTACK$$Base          0x2000'0000         --   Gb  - Linker created -
 CSTACK$$Limit         0x2000'0400         --   Gb  - Linker created -
-GPIOJ_Handler               0x3c1        Code  Gb  asm.o [1]
 __Vectors                     0x0         --   Gb  startup_TM4C1294.o [1]
 __Vectors_End               0x3c0        Data  Gb  startup_TM4C1294.o [1]
 __Vectors_Size {Abs}        0x3c0         --   Gb  startup_TM4C1294.o [1]
-__iar_program_start         0x3dd        Code  Gb  asm.o [1]
+__iar_program_start         0x3c1        Code  Gb  asm.o [1]
 __vector_table                0x0        Data  Gb  startup_TM4C1294.o [1]
 __vector_table_0x1c          0x1c        Data  Gb  startup_TM4C1294.o [1]
 
 
-[1] = C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_04\Debug\Obj
+[1] = C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_05\Debug\Obj
 
-  1'446 bytes of readonly  code memory
+  1'550 bytes of readonly  code memory
   1'024 bytes of readwrite data memory
 
 Errors: none
