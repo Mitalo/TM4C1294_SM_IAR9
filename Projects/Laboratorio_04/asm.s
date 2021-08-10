@@ -83,7 +83,7 @@ main:   MOV R0, #(PORTN_BIT | PORTF_BIT)
         MOV R1, #00000011b ; bits 0 e 1 como entrada
         BL GPIO_digital_input
         
-        BL Button_int_conf ; habilita interrupção do botão SW1
+        BL Button_int_conf ; habilita interrupção dos botões SW1 e SW2
 
         MOV R11, #0
 loop: 	MOV R0, R11
@@ -212,7 +212,7 @@ again:  CBZ R3, last
 last:
         BX LR
 
-; Button_int_conf: configura interrupções do botão SW1 do kit
+; Button_int_conf: configura interrupções dos botões SW1 e SW2 do kit
 ; Destrói: R0, R1 e R2
 Button_int_conf:
         MOV R2, #00000011b ; bit do PJ0
@@ -259,10 +259,10 @@ Button_int_conf:
         
         BX LR
 
-; Button1_int_enable: habilita interrupções do botão SW1 do kit
+; Button1_int_enable: habilita interrupções dos botões SW1 e SW2 do kit
 ; Destrói: R0, R1 e R2
 Button1_int_enable:
-        MOV R2, #00000011b ; bit do PJ0
+        MOV R2, #00000011b ; bits do PJ0 e PJ1
         LDR R1, =GPIO_PORTJ_BASE
         
         LDR R0, [R1, #GPIO_IM]
@@ -271,10 +271,10 @@ Button1_int_enable:
 
         BX LR
 
-; Button1_int_disable: desabilita interrupções do botão SW1 do kit
+; Button1_int_disable: desabilita interrupções dos botões SW1 e SW2 do kit
 ; Destrói: R0, R1 e R2
 Button1_int_disable:
-        MOV R2, #00000011b ; bit do PJ0
+        MOV R2, #00000011b ; bits do PJ0 e PJ1
         LDR R1, =GPIO_PORTJ_BASE
         
         LDR R0, [R1, #GPIO_IM]
@@ -283,10 +283,10 @@ Button1_int_disable:
 
         BX LR
 
-; Button1_int_clear: limpa pendência de interrupções do botão SW1 do kit
+; Button1_int_clear: limpa pendência de interrupções dos botões SW1 e SW2 do kit
 ; Destrói: R0 e R1
 Button1_int_clear:
-        MOV R0, #00000011b ; limpa o bit 0
+        MOV R0, #00000011b ; limpa os bits 1 e 0
         LDR R1, =GPIO_PORTJ_BASE
         STR R0, [R1, #GPIO_ICR]
 
