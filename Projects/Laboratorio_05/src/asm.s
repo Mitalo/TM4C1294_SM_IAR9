@@ -14,6 +14,7 @@ SYSCTL_RCGCGPIO         EQU     0x0608
 SYSCTL_PRGPIO		EQU     0x0A08
 SYSCTL_RCGCUART         EQU     0x0618
 SYSCTL_PRUART           EQU     0x0A18
+; System Control bit definitions
 PORTA_BIT               EQU     000000000000001b ; bit  0 = Port A
 PORTF_BIT               EQU     000000000100000b ; bit  5 = Port F
 PORTJ_BIT               EQU     000000100000000b ; bit  8 = Port J
@@ -47,14 +48,21 @@ GPIO_PUR                EQU     0x0510
 GPIO_DEN                EQU     0x051C
 GPIO_PCTL               EQU     0x052C
 
-; UART Definitions
+; UART definitions
 UART_PORT0_BASE         EQU     0x4000C000
+UART_FR                 EQU     0x0018
 UART_IBRD               EQU     0x0024
 UART_FBRD               EQU     0x0028
 UART_LCRH               EQU     0x002C
 UART_CTL                EQU     0x0030
 UART_CC                 EQU     0x0FC8
+;UART bit definitions
+TXFE_BIT                EQU     10000000b ; TX FIFO full
+RXFF_BIT                EQU     01000000b ; RX FIFO empty
+BUSY_BIT                EQU     00001000b ; Busy
 
+frase                   DC16    "\nSistemas Microcontrolados\r\n"
+tamanho_frase           EQU     0x19
 
 ; PROGRAMA PRINCIPAL
 
@@ -77,23 +85,37 @@ main:   MOV R2, #(UART0_BIT)
 	LDR R0, =UART_PORT0_BASE
         BL UART_config ; configura periférico UART0
         
-        ; envio de dados pela UART utilizando ciclo cego
-        
-        MOV R1, #'0' ; primeiro caracter ASCII a ser transmitido pela UART0
-loop:
-        STR R1, [R0] ; escreve no registrador de dados da UART0 (transmite)
+        ; recepção e envio de dados pela UART utilizando sondagem (polling)
+        ; resulta em um "eco": dados recebidos são retransmitidos pela UART
 
-        PUSH {R0}
-        MOV R0, #0x2000 ; atraso de alguns milissegundos
-        BL SW_delay
-        POP {R0}
-        
-        ADD R1, R1, #1 ; próximo caracter ASCII a ser transmitido pela UART0
-        CMP R1, #'9'
-        IT HI
-          MOVHI R1, #'0' ; caracteres '0' a '9' são enviados sequencialmente
+loop:
+wrx:    LDR R2, [R0, #UART_FR] ; status da UART
+        TST R2, #RXFF_BIT ; receptor cheio?
+        BEQ wrx
+        LDR R1, [R0] ; lê do registrador de dados da UART0 (recebe)
+        CMP R1, #0x0D; verifica se recebeu '\r'
+        BEQ tx
 
         B loop
+
+tx
+        LDR R2, =frase
+        MOV R3, #tamanho_frase
+
+wtx:    LDR R2, [R0, #UART_FR] ; status da UART
+        TST R2, #TXFE_BIT ; transmissor vazio?
+        BEQ wtx
+        
+        LDR R1, [R2]
+        STR R1, [R0] ; escreve no registrador de dados da UART0 (transmite)
+
+        ADD R2, #1
+        SUB R3, #1
+        
+        CMP R3, #0
+        BNE wtx
+        
+        BX LR
 
 
 ; SUB-ROTINAS
@@ -122,14 +144,14 @@ UART_config:
         BIC R1, #0x01 ; desabilita UART (bit UARTEN = 0)
         STR R1, [R0, #UART_CTL]
 
-        ; clock = 16MHz, baud rate = 9600 bps
-        MOV R1, #104
+        ; clock = 16MHz, baud rate = 300 bps
+        MOV R1, #3333
         STR R1, [R0, #UART_IBRD]
-        MOV R1, #11
+        MOV R1, #22
         STR R1, [R0, #UART_FBRD]
         
         ; 8 bits, 1 stop, no parity, FIFOs disabled, no interrupts
-        MOV R1, #0x60
+        MOV R1, #0x6E
         STR R1, [R0, #UART_LCRH]
         
         ; clock source = system clock

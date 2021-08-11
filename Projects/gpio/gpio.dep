@@ -5,11 +5,11 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\src\gpio.s</file>
-            <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C1294NC.icf</file>
-            <file>$PROJ_DIR$\Debug\Obj\gpio.o</file>
-            <file>$PROJ_DIR$\Debug\List\gpio.map</file>
             <file>$PROJ_DIR$\Debug\Obj\gpio.o.rsp</file>
+            <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C1294NC.icf</file>
+            <file>$PROJ_DIR$\Debug\List\gpio.map</file>
+            <file>$PROJ_DIR$\src\gpio.s</file>
+            <file>$PROJ_DIR$\Debug\Obj\gpio.o</file>
             <file>$PROJ_DIR$\Debug\Exe\gpio.out</file>
         </outputs>
         <file>
@@ -17,7 +17,7 @@
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 3 5</file>
+                    <file> 2 5</file>
                 </tool>
             </outputs>
         </file>
@@ -26,13 +26,13 @@
             <outputs>
                 <tool>
                     <name>AARM</name>
-                    <file> 2</file>
+                    <file> 4</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>AARM</name>
-                    <file> 4</file>
+                    <file> 0</file>
                 </tool>
             </inputs>
         </file>
@@ -41,13 +41,13 @@
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 3</file>
+                    <file> 2</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 1 2</file>
+                    <file> 1 4</file>
                 </tool>
             </inputs>
         </file>
