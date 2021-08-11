@@ -5,34 +5,52 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\..\uart2\src\uart2.s</file>
             <file>$PROJ_DIR$\Debug\Obj\asm.o</file>
-            <file>$PROJ_DIR$\..\Laboratorio_04\src\asm.s</file>
-            <file>$PROJ_DIR$\src\startup_TM4C1294.s</file>
-            <file>$PROJ_DIR$\Debug\Obj\asm.o.rsp</file>
-            <file>$PROJ_DIR$\Debug\Obj\startup_TM4C1294.o.rsp</file>
             <file>$PROJ_DIR$\Debug\Exe\Laboratorio_05.out</file>
-            <file>$PROJ_DIR$\Debug\Obj\startup_TM4C1294.o</file>
             <file>$PROJ_DIR$\src\asm.s</file>
-            <file>$PROJ_DIR$\Debug\List\Laboratorio_05.map</file>
             <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C1294NC.icf</file>
-            <file>$PROJ_DIR$\..\Laboratorio_01\asm.s</file>
+            <file>$PROJ_DIR$\src\startup_TM4C1294.s</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup_TM4C1294.o.rsp</file>
+            <file>$PROJ_DIR$\Debug\Obj\asm.o.rsp</file>
+            <file>$PROJ_DIR$\Debug\List\Laboratorio_05.map</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup_TM4C1294.o</file>
         </outputs>
         <file>
-            <name>[ROOT_NODE]</name>
+            <name>$PROJ_DIR$\Debug\Exe\Laboratorio_05.out</name>
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 6 9</file>
+                    <file> 7</file>
                 </tool>
             </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 3 0 8</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\asm.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 0</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 6</file>
+                </tool>
+            </inputs>
         </file>
         <file>
             <name>$PROJ_DIR$\src\startup_TM4C1294.s</name>
             <outputs>
                 <tool>
                     <name>AARM</name>
-                    <file> 7</file>
+                    <file> 8</file>
                 </tool>
             </outputs>
             <inputs>
@@ -43,34 +61,13 @@
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\Debug\Exe\Laboratorio_05.out</name>
+            <name>[ROOT_NODE]</name>
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 9</file>
+                    <file> 1 7</file>
                 </tool>
             </outputs>
-            <inputs>
-                <tool>
-                    <name>ILINK</name>
-                    <file> 10 1 7</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\src\asm.s</name>
-            <outputs>
-                <tool>
-                    <name>AARM</name>
-                    <file> 1</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>AARM</name>
-                    <file> 4</file>
-                </tool>
-            </inputs>
         </file>
         <forcedrebuild>
             <name>[MULTI_TOOL]</name>

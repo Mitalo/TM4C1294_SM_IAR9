@@ -109,8 +109,8 @@ wtx:    LDR R2, [R0, #UART_FR] ; status da UART
         LDR R1, [R2]
         STR R1, [R0] ; escreve no registrador de dados da UART0 (transmite)
 
-        ADD R2, #1
-        SUB R3, #1
+        ADD R2, #1; percorre a string a ser transmitida
+        SUB R3, #1; decrementa o valor do tamanho da string
         
         CMP R3, #0
         BNE wtx

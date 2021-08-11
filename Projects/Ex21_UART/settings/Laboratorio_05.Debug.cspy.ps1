@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_05\settings\Laboratorio_05.Debug.general.xcl" --backend -f "C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_05\settings\Laboratorio_05.Debug.driver.xcl" 
+& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Ex21_UART\settings\Laboratorio_05.Debug.general.xcl" --backend -f "C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Ex21_UART\settings\Laboratorio_05.Debug.driver.xcl" 
 }
 else
 {
-& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_05\settings\Laboratorio_05.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Laboratorio_05\settings\Laboratorio_05.Debug.driver.xcl" 
+& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Ex21_UART\settings\Laboratorio_05.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Ex21_UART\settings\Laboratorio_05.Debug.driver.xcl" 
 }
