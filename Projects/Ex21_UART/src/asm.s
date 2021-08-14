@@ -61,8 +61,8 @@ TXFE_BIT                EQU     10000000b ; TX FIFO full
 RXFF_BIT                EQU     01000000b ; RX FIFO empty
 BUSY_BIT                EQU     00001000b ; Busy
 
-frase                   DC16    "\nSistemas Microcontrolados\r\n"
-tamanho_frase           EQU     0x19
+
+tamanho_frase           EQU     0x1B
 
 ; PROGRAMA PRINCIPAL
 
@@ -77,7 +77,7 @@ main:   MOV R2, #(UART0_BIT)
 	LDR R0, =GPIO_PORTA_BASE
         MOV R1, #00000011b ; bits 0 e 1 como especiais
         BL GPIO_special
-
+ 
 	MOV R1, #0xFF ; máscara das funções especiais no port A (bits 1 e 0)
         MOV R2, #0x11  ; funções especiais RX e TX no port A (UART)
         BL GPIO_select
@@ -94,25 +94,27 @@ wrx:    LDR R2, [R0, #UART_FR] ; status da UART
         BEQ wrx
         LDR R1, [R0] ; lê do registrador de dados da UART0 (recebe)
         CMP R1, #0x0D; verifica se recebeu '\r'
-        BEQ tx
+        BNE wrx
 
+        BL tx
+        
         B loop
 
 tx
-        LDR R2, =frase
-        MOV R3, #tamanho_frase
+        LDR R2, =frase          //ponteiro para a primeira posição da string
+        MOV R4, #tamanho_frase
 
-wtx:    LDR R2, [R0, #UART_FR] ; status da UART
-        TST R2, #TXFE_BIT ; transmissor vazio?
+wtx:    LDR R3, [R0, #UART_FR] ; status da UART
+        TST R3, #TXFE_BIT ; transmissor vazio?
         BEQ wtx
         
         LDR R1, [R2]
         STR R1, [R0] ; escreve no registrador de dados da UART0 (transmite)
 
         ADD R2, #1; percorre a string a ser transmitida
-        SUB R3, #1; decrementa o valor do tamanho da string
+        SUB R4, #1; decrementa o valor do tamanho da string
         
-        CMP R3, #0
+        CMP R4, #0; quando chegar ao fim da string, volta para a chamada da sub-rotina
         BNE wtx
         
         BX LR
@@ -391,4 +393,9 @@ Button1_int_clear:
 
         BX LR
 
+        ;END
+
+        SECTION .rodata:CONST(2)
+        DATA
+frase   DC8    "Sistemas Microcontrolados\r\n"
         END
