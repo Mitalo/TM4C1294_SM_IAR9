@@ -1,0 +1,272 @@
+###############################################################################
+#
+# IAR ELF Linker V9.10.2.313/W64 for ARM                  26/Aug/2021  23:31:45
+# Copyright 2007-2021 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\1\Desktop\2021.1\Sistemas
+#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Projeto
+#        Final\Debug\Exe\Projeto Final.out
+#    Map file     =
+#        C:\Users\1\Desktop\2021.1\Sistemas
+#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Projeto
+#        Final\Debug\List\Projeto Final.map
+#    Command line =
+#        -f "C:\Users\1\Desktop\2021.1\Sistemas
+#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Projeto
+#        Final\Debug\Exe\Projeto Final.out.rsp"
+#        ("C:\Users\1\Desktop\2021.1\Sistemas
+#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Projeto
+#        Final\Debug\Obj\cstartup_M.o" "C:\Users\1\Desktop\2021.1\Sistemas
+#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Projeto
+#        Final\Debug\Obj\funcoes.o" "C:\Users\1\Desktop\2021.1\Sistemas
+#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Projeto
+#        Final\Debug\Obj\gpio.o" "C:\Users\1\Desktop\2021.1\Sistemas
+#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Projeto
+#        Final\Debug\Obj\main.o" "C:\Users\1\Desktop\2021.1\Sistemas
+#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Projeto
+#        Final\Debug\Obj\uart.o" --no_out_extension -o
+#        "C:\Users\1\Desktop\2021.1\Sistemas
+#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Projeto
+#        Final\Debug\Exe\Projeto Final.out" --redirect _Printf=_PrintfFullNoMb
+#        --redirect _Scanf=_ScanfFullNoMb --map
+#        "C:\Users\1\Desktop\2021.1\Sistemas
+#        Microcontrolados\TM4C1294_SM_IAR9\Projects\Projeto
+#        Final\Debug\List\Projeto Final.map" --config "C:\Program Files\IAR
+#        Systems\Embedded Workbench
+#        9.0\arm\config\linker\TexasInstruments\TM4C1294NC.icf" --semihosting
+#        --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__Heap_Handler  = NoFree
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The no free heap was selected because no calls to memory
+deallocation functions were found in the application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0xf'ffff] { ro };
+define block CSTACK with size = 32K, alignment = 8 { };
+define block HEAP with size = 64K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2003'ffff] {
+          rw, block CSTACK, block HEAP };
+
+  Section          Kind         Address      Size  Object
+  -------          ----         -------      ----  ------
+"A0":                                       0x200
+  .intvec          const            0x0     0x200  cstartup_M.o [1]
+                                - 0x200     0x200
+
+"P1":                                       0x6b0
+  .text            ro code        0x200     0x170  main.o [1]
+  .text            ro code        0x370      0x66  ABImemset.o [4]
+  .text            ro code        0x3d6       0x2  cstartup_M.o [1]
+  .text            ro code        0x3d8      0x94  gpio.o [1]
+  .text            ro code        0x46c      0xe8  uart.o [1]
+  .text            ro code        0x554      0x76  ABImemcpy_unaligned.o [4]
+  .text            ro code        0x5ca     0x120  funcoes.o [1]
+  .text            ro code        0x6ea       0x2  cstartup_M.o [1]
+  .text            ro code        0x6ec      0x78  no_free_heap0.o [2]
+  .text            ro code        0x764      0x2c  xgetmemchunk.o [2]
+  .text            ro code        0x790      0x12  xxmemxmemzero.o [2]
+  .text            ro code        0x7a2      0x38  zero_init3.o [4]
+  .text            ro code        0x7da       0x2  cstartup_M.o [1]
+  .text            ro code        0x7dc      0x28  data_init.o [4]
+  .text            ro code        0x804      0x22  fpinit_M.o [3]
+  .iar.init_table  const          0x828      0x10  - Linker created -
+  .text            ro code        0x838       0x2  cstartup_M.o [1]
+  .text            ro code        0x83c      0x1e  cmain.o [4]
+  .text            ro code        0x85a       0x4  low_level_init.o [2]
+  .text            ro code        0x85e       0x4  exit.o [2]
+  .text            ro code        0x862       0x2  cstartup_M.o [1]
+  .text            ro code        0x864       0xa  cexit.o [4]
+  .text            ro code        0x86e       0x2  cstartup_M.o [1]
+  .text            ro code        0x870      0x14  exit.o [5]
+  .rodata          const          0x884      0x14  main.o [1]
+  .text            ro code        0x898      0x10  cstartup_M.o [1]
+  .text            ro code        0x8a8       0x2  cstartup_M.o [1]
+  .text            ro code        0x8aa       0x2  cstartup_M.o [1]
+  .text            ro code        0x8ac       0x2  cstartup_M.o [1]
+  .text            ro code        0x8ae       0x2  cstartup_M.o [1]
+  .rodata          const          0x8b0       0x0  zero_init3.o [4]
+                                - 0x8b0     0x6b0
+
+"P2", part 1 of 2:                            0x8
+  .bss             zero     0x2000'0000       0x4  no_free_heap0.o [2]
+  .bss             zero     0x2000'0004       0x4  xgetmemchunk.o [2]
+                          - 0x2000'0008       0x8
+
+"P2", part 2 of 2:                       0x1'8000
+  CSTACK                    0x2000'0008    0x8000  <Block>
+    CSTACK         uninit   0x2000'0008    0x8000  <Block tail>
+  HEAP                      0x2000'8008  0x1'0000  <Block>
+    HEAP           uninit   0x2000'8008  0x1'0000  <Block tail>
+                          - 0x2001'8008  0x1'8000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0x8b0     0xf'ffff  0xf'f750
+  0x2001'8008  0x2003'ffff  0x2'7ff8
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x8:
+          0x2000'0000   0x8
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  ro data  rw data
+    ------                 -------  -------  -------
+command line/config:
+    ------------------------------------------------
+    Total:
+
+C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Projeto Final\Debug\Obj: [1]
+    cstartup_M.o                36      512
+    funcoes.o                  288
+    gpio.o                     148
+    main.o                     368       20
+    uart.o                     232
+    ------------------------------------------------
+    Total:                   1'072      532
+
+dl7M_tln.a: [2]
+    exit.o                       4
+    low_level_init.o             4
+    no_free_heap0.o            120                 4
+    xgetmemchunk.o              44                 4
+    xxmemxmemzero.o             18
+    ------------------------------------------------
+    Total:                     190                 8
+
+m7M_tls.a: [3]
+    fpinit_M.o                  34
+    ------------------------------------------------
+    Total:                      34
+
+rt7M_tl.a: [4]
+    ABImemcpy_unaligned.o      118
+    ABImemset.o                102
+    cexit.o                     10
+    cmain.o                     30
+    data_init.o                 40
+    zero_init3.o                56
+    ------------------------------------------------
+    Total:                     356
+
+shb_l.a: [5]
+    exit.o                      20
+    ------------------------------------------------
+    Total:                      20
+
+    Gaps                         2        2
+    Linker created                       16   98'304
+----------------------------------------------------
+    Grand Total:             1'674      550   98'312
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base         0x828          --   Gb  - Linker created -
+.iar.init_table$$Limit        0x838          --   Gb  - Linker created -
+?main                         0x83d         Code  Gb  cmain.o [4]
+BusFault_Handler              0x839    0x2  Code  Gb  cstartup_M.o [1]
+CSTACK$$Base            0x2000'0008          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'8008          --   Gb  - Linker created -
+DebugMon_Handler              0x8a9    0x2  Code  Gb  cstartup_M.o [1]
+GPIO_Init                     0x3d9   0x5e  Code  Gb  gpio.o [1]
+HEAP$$Base              0x2000'8008          --   Gb  - Linker created -
+HEAP$$Limit             0x2001'8008          --   Gb  - Linker created -
+HardFault_Handler             0x6eb    0x2  Code  Gb  cstartup_M.o [1]
+IntDefaultHandler             0x8af    0x2  Code  Gb  cstartup_M.o [1]
+MemManage_Handler             0x7db    0x2  Code  Gb  cstartup_M.o [1]
+NMI_Handler                   0x3d7    0x2  Code  Gb  cstartup_M.o [1]
+PendSV_Handler                0x8ab    0x2  Code  Gb  cstartup_M.o [1]
+Region$$Table$$Base           0x828          --   Gb  - Linker created -
+Region$$Table$$Limit          0x838          --   Gb  - Linker created -
+SVC_Handler                   0x86f    0x2  Code  Gb  cstartup_M.o [1]
+SysTick_Handler               0x8ad    0x2  Code  Gb  cstartup_M.o [1]
+Uart0_Init                    0x46d   0x8a  Code  Gb  uart.o [1]
+Uart0_Rcv                     0x4f7   0x10  Code  Gb  uart.o [1]
+Uart0_Send                    0x507   0x10  Code  Gb  uart.o [1]
+UsageFault_Handler            0x863    0x2  Code  Gb  cstartup_M.o [1]
+__aeabi_memset                0x371         Code  Gb  ABImemset.o [4]
+__cmain                       0x83d         Code  Gb  cmain.o [4]
+__data_GetMemChunk            0x765   0x2c  Code  Gb  xgetmemchunk.o [2]
+__data_GetMemChunk::start
+                        0x2000'0004    0x4  Data  Lc  xgetmemchunk.o [2]
+__data_memzero                0x791   0x12  Code  Gb  xxmemxmemzero.o [2]
+__exit                        0x871   0x14  Code  Gb  exit.o [5]
+__iar_Memset                  0x371         Code  Gb  ABImemset.o [4]
+__iar_Memset_word             0x379         Code  Gb  ABImemset.o [4]
+__iar_data_init3              0x7dd   0x28  Code  Gb  data_init.o [4]
+__iar_init_vfp                0x805         Code  Gb  fpinit_M.o [3]
+__iar_program_start           0x899   0x10  Code  Gb  cstartup_M.o [1]
+__iar_unaligned_memcpy        0x555         Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_unaligned_memcpy4
+                              0x575         Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_unaligned_memcpy8
+                              0x575         Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_zero_init3              0x7a3   0x38  Code  Gb  zero_init3.o [4]
+__low_level_init              0x85b    0x4  Code  Gb  low_level_init.o [2]
+__no_free_calloc              0x733   0x2c  Code  Gb  no_free_heap0.o [2]
+__no_free_malloc              0x6ed   0x46  Code  Gb  no_free_heap0.o [2]
+__vector_table                  0x0  0x200  Data  Gb  cstartup_M.o [1]
+_call_main                    0x849         Code  Gb  cmain.o [4]
+_exit                         0x865         Code  Gb  cexit.o [4]
+calcula                       0x603   0x3a  Code  Gb  funcoes.o [1]
+exit                          0x85f    0x4  Code  Gb  exit.o [2]
+main                          0x201  0x170  Code  Gb  main.o [1]
+qs                      0x2000'0000    0x4  Data  Lc  no_free_heap0.o [2]
+retorna_num                   0x63d   0x3c  Code  Gb  funcoes.o [1]
+tam_res                       0x679   0x16  Code  Gb  funcoes.o [1]
+transmite_resultado           0x68f   0x5c  Code  Gb  funcoes.o [1]
+verifica_numero               0x5cb   0x10  Code  Gb  funcoes.o [1]
+verifica_operacao             0x5db   0x28  Code  Gb  funcoes.o [1]
+
+
+[1] = C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Projeto Final\Debug\Obj
+[2] = dl7M_tln.a
+[3] = m7M_tls.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+   1'674 bytes of readonly  code memory
+     550 bytes of readonly  data memory
+  98'312 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

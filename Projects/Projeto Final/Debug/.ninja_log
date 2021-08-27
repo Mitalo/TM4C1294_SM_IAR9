@@ -1,0 +1,23 @@
+# ninja log v5
+84	1940	6517338154416361	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Obj/cstartup_M.o	782df7dce5da38d
+0	2787	6517338162532264	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Obj/funcoes.o	edca50ef35e269e3
+1962	3039	6517338163932225	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Obj/main.o	55c70d55713368fc
+66	3113	6517338166132135	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Obj/gpio.o	cfab113afc901952
+109	3267	6517338168232159	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Obj/uart.o	d05e9da9db2ab18b
+3278	3964	6517338174532150	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Exe/Projeto Final.out	fbfe999f25ab0980
+10	199	6517339204936555	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Obj/cstartup_M.o	fd9663df09757698
+1	279	6517339205236640	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Obj/funcoes.o	5f5c47182503de10
+13	291	6517339205336540	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Obj/main.o	5cb6e8273ebcd914
+6	351	6517339206536557	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Obj/gpio.o	30db6e6395f2450d
+208	469	6517339207636553	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Obj/uart.o	c64b9f9621065307
+475	577	6517339208736556	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Exe/Projeto Final.out	30d08549f78877e8
+2	571	6517342157072834	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Obj/main.o	5cb6e8273ebcd914
+585	798	6517342159612700	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Exe/Projeto Final.out	30d08549f78877e8
+1	308	6517342859339045	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Obj/main.o	5cb6e8273ebcd914
+319	548	6517342861839029	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Exe/Projeto Final.out	30d08549f78877e8
+2	480	6517344439510881	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Obj/main.o	5cb6e8273ebcd914
+487	828	6517344443010987	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Exe/Projeto Final.out	30d08549f78877e8
+3	277	6517346305118902	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Obj/main.o	5cb6e8273ebcd914
+285	434	6517346306618887	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Exe/Projeto Final.out	30d08549f78877e8
+2	183	6517347055815074	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Obj/main.o	5cb6e8273ebcd914
+193	346	6517347057551128	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/Exe/Projeto Final.out	30d08549f78877e8

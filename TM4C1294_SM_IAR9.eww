@@ -52,6 +52,9 @@
         <path>$WS_DIR$\Projects\Projeto\Projeto.ewp</path>
     </project>
     <project>
+        <path>$WS_DIR$\Projects\Projeto Final\Projeto Final.ewp</path>
+    </project>
+    <project>
         <path>$WS_DIR$\..\..\..\Teste.ewp</path>
     </project>
     <project>
