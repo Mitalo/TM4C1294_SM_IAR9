@@ -60,7 +60,6 @@ GPIOJ_Handler:
 
         BX LR ; retorno da ISR
 
-
 ; PROGRAMA PRINCIPAL
 
 __iar_program_start

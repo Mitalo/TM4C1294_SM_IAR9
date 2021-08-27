@@ -63,6 +63,25 @@ theend  ADD R10, #1
         
         MOV R7, #0
         
+  IntDefaultHandler,                      // HIM PS/2 0
+  IntDefaultHandler,                      // HIM LED Sequencer 0
+  IntDefaultHandler,                      // HIM Consumer IR 0
+  IntDefaultHandler,                      // I2C8 Master and Slave
+  IntDefaultHandler,                      // I2C9 Master and Slave
+  IntDefaultHandler                       // GPIO Port T  
+};
+
+#pragma call_graph_root = "interrupt"
+__weak void NMI_Handler( void ) { while (1) {} }
+#pragma call_graph_root = "interrupt"
+__weak void HardFault_Handler( void ) { while (1) {} }
+#pragma call_graph_root = "interrupt"
+__weak void MemManage_Handler( void ) { while (1) {} }
+#pragma call_graph_root = "interrupt"
+__weak void BusFault_Handler( void ) { while (1) {} }
+#pragma call_graph_root = "interrupt"
+__weak void UsageFault_Handler( void ) { while (1) {} }
+#pragma call_graph_root = "interrupt"
         AND R7, R10, #2 ;Aqui é feito o mesmo procedimento do anterior, porém agora só pega o segundo bit
         ORR R1, R7, LSR #1
         
