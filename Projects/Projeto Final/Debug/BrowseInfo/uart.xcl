@@ -1,13 +1,13 @@
-"C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Projeto Final\src\main.c"
+"C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Projeto Final\src\uart.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -funsigned-char
 -MD
 -MF
-C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Projeto Final\Debug\BrowseInfo\main.pbi.dep
+C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Projeto Final\Debug\BrowseInfo\uart.pbi.dep
 -o
-C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Projeto Final\Debug\BrowseInfo\main.pbi
+C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Projeto Final\Debug\BrowseInfo\uart.pbi
 -I
 C:\Users\1\Desktop\2021.1\Sistemas Microcontrolados\TM4C1294_SM_IAR9\Projects\Projeto Final\src
 -I

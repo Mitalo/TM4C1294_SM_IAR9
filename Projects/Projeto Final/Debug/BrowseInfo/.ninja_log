@@ -1,13 +1,32 @@
 # ninja log v5
-1	369	6517335450000000	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/main.xcl	6838d9b182270690
-378	468	6517335453650231	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/main.pbi	bdd62ce488779557
-474	522	6517335454149845	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbd	245cf1e4ed797dbc
-529	664	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
-0	110	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
-1	129	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
-1	122	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
-0	128	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
+55	568	6517350900000000	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/main.xcl	22c554546af25f80
+575	843	6517350902912876	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/main.pbi	bdd62ce488779557
+1477	1624	6517350910841669	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbd	5c50003b226124a7
+1	125	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
+47	553	6517350890000000	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/funcoes.xcl	c4cded00fc66a210
+2	462	6517350890000000	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/cstartup_M.xcl	ae697008ca438e46
+476	736	6517350901945468	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/cstartup_M.pbi	6815b478fb1b2003
+51	533	6517350890000000	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/gpio.xcl	23a369172d5a597d
+559	834	6517350902912876	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/funcoes.pbi	1f094357fa539ca1
+839	908	6517350903650897	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final_part0.pbi	60734d91ef74a02b
+550	951	6517350904099694	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/gpio.pbi	e1788578e213b95f
+1375	1473	6517350909325739	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final_part2.pbi	3b2246812c29af30
+740	1075	6517350900000000	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/uart.xcl	e03043af1182bb2
+957	1142	6517350906034528	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final_part1.pbi	aca62dd1a6c9926b
+1082	1371	6517350908288499	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/uart.pbi	4544dcf190a57b92
+1	127	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
 1	128	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
-1	138	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
-0	126	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
+1	184	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
+1	130	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
+1	127	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
+1	126	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
+1	126	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
+1	126	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
+1	125	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
 0	128	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
+0	123	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
+1	110	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
+1	117	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
+1	116	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
+1	123	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
+1	127	0	C:/Users/1/Desktop/2021.1/Sistemas Microcontrolados/TM4C1294_SM_IAR9/Projects/Projeto Final/Debug/BrowseInfo/Projeto Final.pbw	fb549e92df3aa70e
